@@ -1,0 +1,12 @@
+{%extends "base.html"%}
+
+{%block quote%}
+<form action="" method="post" enctype="multipart/form-data">
+    <h2>Add New post</h2>
+    {%csrf_token%}
+    <div class="mt-4">
+        {{form.as_p}}
+    </div>
+    <button type="submit">Submit</button>
+</form>
+{%endblock quote%}

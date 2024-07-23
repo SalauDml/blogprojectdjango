@@ -1,0 +1,32 @@
+{%extends "base.html" %}
+
+{%block quote%}
+    <div>
+        <main>
+            <h2>Log into your account</h2>
+
+
+        {%if next %}
+            {% if user.is_authenticated %}
+                <p>sorry you don't have access to this page, please login with an account that has permission</p>
+            {%else%}
+                <p>login to access the page</p>
+            {%endif%}
+        {%endif%}
+        
+        <form action="" method="post">
+            {%csrf_token%}
+            <div>
+                <label for="username">{{form.username.label_tag}}</label>
+                {{form.username}}
+            </div>
+            <div>
+                <label for="password">{{form.password.label_tag}}</label>
+                {{form.password}}
+            </div>
+            <input type="submit" class="btn btn primary" value="Log In">
+            <input type="hidden" name="next" value="{{next}}">
+        </form>
+    </main>
+    </div>
+{%endblock quote%}

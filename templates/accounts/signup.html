@@ -1,0 +1,16 @@
+{%extends "base.html" %}
+
+{%block quote%}
+    <div>
+        <main>
+            <h2>Create account</h2>
+        <form action="" method="post">
+            {%csrf_token%}
+            <div>
+                {{form.as_p}}
+            </div>
+            <input type="submit" class="btn btn primary" value="Create account">
+        </form>
+    </main>
+    </div>
+{%endblock quote%}
